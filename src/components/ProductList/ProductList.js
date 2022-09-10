@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation  } from "swiper";
@@ -44,7 +45,7 @@ const ProductList = () => {
 						<div className="product-list__text">
 							<h3>Everyday items, we have something to suit every occasion.</h3>
 							<p className='desc'>At suspendisse augue lectus arcu, ut sit posuere vitae sit tincidunt semper eu proin leo gravida cursus.</p>
-							<a href='#'>
+							<a href={'#'}>
 								<p>Shop All Everyday Items</p>
 							</a>
 						</div>
