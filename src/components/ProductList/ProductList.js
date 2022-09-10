@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation  } from "swiper";
 import "swiper/css";
@@ -13,12 +13,13 @@ import panthBgYellow from '../../img/p1-bg-yellow.png';
 import tshirtBgBlue from '../../img/t2-bg-blue.png';
 
 const ProductList = () => {
+	const [click, setClick] = useState(false);
 
 	useEffect(() => {
 		const slideImg = document.querySelectorAll('.js-bg-img');
 		const bullet = document.querySelectorAll('.swiper-slide-active .swiper-pagination-bullet');
-		
-		slideImg.forEach((element, index )=> {
+	
+		slideImg.forEach((element, index ) => {
 			const colorText = slideImg[index].getAttribute('src');
 			const color = colorText?.split('bg-')[1].split('.')[0];
 			console.log([...bullet][index],"bullet");
@@ -28,7 +29,11 @@ const ProductList = () => {
 			}
 		});
 	}, [])
-	
+
+	const clickNext = () => {
+		setClick(!click);
+	}
+
     return (
       <Container className="product-list">
 				<Row className="left">
@@ -52,6 +57,7 @@ const ProductList = () => {
 							loopFillGroupWithBlank={true}
 							navigation={true}
 							modules={[Navigation]}
+							slideChange={clickNext}
 							className="mySwiper">
 								<SwiperSlide>
 									<Swiper
@@ -114,34 +120,6 @@ const ProductList = () => {
 											<p>455 Signature hoodie</p>
 											<p>$43</p>
 										</SwiperSlide>
-										<SwiperSlide>Slide 2</SwiperSlide>
-										<SwiperSlide>Slide 3</SwiperSlide>
-										<SwiperSlide>Slide 4</SwiperSlide>
-									</Swiper>
-								</SwiperSlide>
-								<SwiperSlide>
-									<Swiper
-										spaceBetween={30}
-										pagination={{
-											clickable: true,
-										}}
-										modules={[Pagination]}
-										className="mySwiper4">
-										<SwiperSlide>Slide 1</SwiperSlide>
-										<SwiperSlide>Slide 2</SwiperSlide>
-										<SwiperSlide>Slide 3</SwiperSlide>
-										<SwiperSlide>Slide 4</SwiperSlide>
-									</Swiper>
-								</SwiperSlide>
-								<SwiperSlide>
-									<Swiper
-										spaceBetween={30}
-										pagination={{
-											clickable: true,
-										}}
-										modules={[Pagination]}
-										className="mySwiper5">
-										<SwiperSlide>Slide 1</SwiperSlide>
 										<SwiperSlide>Slide 2</SwiperSlide>
 										<SwiperSlide>Slide 3</SwiperSlide>
 										<SwiperSlide>Slide 4</SwiperSlide>
