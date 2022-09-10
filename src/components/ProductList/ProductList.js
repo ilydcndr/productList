@@ -60,7 +60,7 @@ const ProductList = () => {
 											clickable: true,
 										}}
 										modules={[Pagination]}
-										className="mySwiper">
+										className="mySwiper1">
 										<SwiperSlide>
 											<img src={tshirtBgGreen} className="product-img js-bg-img" alt="img" />
 											<p>365 Signature hoodie</p>
